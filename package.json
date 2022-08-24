@@ -16,5 +16,8 @@
     "mongoose": "^6.5.2",
     "nodemon": "^2.0.19"
   },
-  "repository": "https://github.com/DanielCaz/restaurant-api"
+  "repository": "https://github.com/DanielCaz/restaurant-api",
+  "engines": {
+    "node": "16.15.1"
+  }
 }
