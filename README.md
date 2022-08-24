@@ -1,4 +1,4 @@
-# Restaurante Manager API
+# Restaurant Manager API
 
 Express and mongoose API for my ionic Restaurant Manager app
 
