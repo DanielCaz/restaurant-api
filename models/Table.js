@@ -18,3 +18,5 @@ const TableSchema = mongoose.Schema({
     required: true,
   },
 });
+
+module.exports = mongoose.model("Tables", TableSchema);
