@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
 
 router.delete("/:tableId", async (req, res) => {
   try {
-    const removedTable = await Table.remove({ _id: req.params.tableId });
+    const removedTable = await Table.deleteOne({ _id: req.params.tableId });
     res.json(removedTable);
   } catch (err) {
     res.json({ message: err });
