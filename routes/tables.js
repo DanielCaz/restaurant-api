@@ -24,9 +24,8 @@ router.post("/", async (req, res) => {
   const table = new Table({
     _id: req.body._id,
     name: req.body.name,
-    description: req.body.description,
-    capacity: req.body.capacity,
-    tables: req.body.tables,
+    capacity,
+    status: req.body.status,
   });
 
   try {
