@@ -14,6 +14,10 @@ const usersRoute = require("./routes/users");
 app.use("/users", usersRoute);
 const tablesRoute = require("./routes/tables");
 app.use("/tables", tablesRoute);
+const productsRoute = require("./routes/products");
+app.use("/products", productsRoute);
+const categoriesRoute = require("./routes/categories");
+app.use("/categories", categoriesRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

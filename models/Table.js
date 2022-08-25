@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const TableSchema = mongoose.Schema({
   _id: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
   name: {
