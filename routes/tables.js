@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const router = express.Router();
 const Table = require("../models/Table");
 
@@ -22,7 +23,7 @@ router.get("/:tableId", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const table = new Table({
-    _id: req.body._id,
+    _id: mongoose.Types.ObjectId(),
     name: req.body.name,
     capacity: req.body.capacity,
     status: req.body.status,
@@ -49,7 +50,7 @@ router.patch("/:tableId", async (req, res) => {
   try {
     const updatedTable = await Table.updateOne(
       { _id: req.params.tableId },
-      { $set: { name: req.body.name } }
+      { $set: { status: req.body.status } }
     );
     res.json(updatedTable);
   } catch (err) {
