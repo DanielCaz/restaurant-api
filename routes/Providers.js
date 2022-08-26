@@ -53,7 +53,14 @@ router.patch("/:providerId", async (req, res) => {
   try {
     const updatedProvider = await Provider.updateOne(
       { _id: req.params.providerId },
-      { $set: { name: req.body.name } }
+      {
+        $set: {
+          name: req.body.name,
+          rfc: req.body.rfc,
+          phone: req.body.phone,
+          email: req.body.email,
+        },
+      }
     );
     res.json(updatedProvider);
   } catch (err) {

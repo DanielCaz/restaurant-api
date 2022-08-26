@@ -50,7 +50,13 @@ router.patch("/:tableId", async (req, res) => {
   try {
     const updatedTable = await Table.updateOne(
       { _id: req.params.tableId },
-      { $set: { status: req.body.status } }
+      {
+        $set: {
+          name: req.body.name,
+          capacity: req.body.capacity,
+          status: req.body.status,
+        },
+      }
     );
     res.json(updatedTable);
   } catch (err) {
