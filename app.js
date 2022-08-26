@@ -18,6 +18,8 @@ const productsRoute = require("./routes/products");
 app.use("/products", productsRoute);
 const categoriesRoute = require("./routes/categories");
 app.use("/categories", categoriesRoute);
+const providersRoute = require("./routes/providers");
+app.use("/providers", providersRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
