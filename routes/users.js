@@ -40,6 +40,19 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.post("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({ username: req.body.username });
+    if (user.password === req.body.password) {
+      res.json(user);
+    } else {
+      res.json({ message: "Wrong password" });
+    }
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
 router.delete("/:userId", async (req, res) => {
   try {
     const removedUser = await User.deleteOne({ _id: req.params.userId });
