@@ -5,11 +5,15 @@ const UserSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
-  name: {
+  firstname: {
     type: String,
     required: true,
   },
-  surname: {
+  lastname: {
+    type: String,
+    required: true,
+  },
+  username: {
     type: String,
     required: true,
   },

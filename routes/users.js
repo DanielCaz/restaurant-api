@@ -24,8 +24,9 @@ router.get("/:userId", async (req, res) => {
 router.post("/", async (req, res) => {
   const user = new User({
     _id: mongoose.Types.ObjectId(),
-    name: req.body.name,
-    surname: req.body.surname,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    username: req.body.username,
     role: req.body.role,
     password: req.body.password,
     tables: req.body.tables,
@@ -54,8 +55,9 @@ router.patch("/:userId", async (req, res) => {
       { _id: req.params.userId },
       {
         $set: {
-          name: req.body.name,
-          surname: req.body.surname,
+          firstname: req.body.firstname,
+          lastname: req.body.lastname,
+          username: req.body.username,
           role: req.body.role,
           password: req.body.password,
           tables: req.body.tables,
